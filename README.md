@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Team Task Manager
 
 ## Railway Deployment Guide
@@ -49,6 +48,3 @@ python manage.py runserver
 ### 7. Useful URLs
 - Local: `http://127.0.0.1:8000/`
 - API docs: use your app root plus endpoints like `/api/projects/`
-=======
-# Team_Task_Manager
->>>>>>> 4eee3f539987c65d6cc58b659e0911d23feb1006
