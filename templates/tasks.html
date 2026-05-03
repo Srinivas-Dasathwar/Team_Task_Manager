@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-12">
+        <h1>Tasks</h1>
+        <p class="text-muted">Manage assigned tasks and track progress.</p>
+    </div>
+</div>
+<div class="row mb-3">
+    <div class="col-md-8">
+        <form class="row g-2" method="get">
+            <div class="col-sm-5">
+                <input type="text" name="q" value="{{ query }}" class="form-control" placeholder="Search tasks or projects">
+            </div>
+            <div class="col-sm-4">
+                <select name="status" class="form-select">
+                    <option value="">All status</option>
+                    {% for code,label in status_choices %}
+                        <option value="{{ code }}" {% if status_filter == code %}selected{% endif %}>{{ label }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-sm-3">
+                <button type="submit" class="btn btn-primary w-100">Filter</button>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        {% if tasks %}
+            <div class="table-responsive">
+                <table class="table table-hover align-middle">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Project</th>
+                            <th>Assigned To</th>
+                            <th>Status</th>
+                            <th>Deadline</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for task in tasks %}
+                            <tr>
+                                <td>{{ task.title }}</td>
+                                <td>{{ task.project.name }}</td>
+                                <td>{{ task.assigned_to.username|default:"Unassigned" }}</td>
+                                <td>{{ task.get_status_display }}</td>
+                                <td>{{ task.deadline }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% else %}
+            <div class="alert alert-secondary">No tasks found.</div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

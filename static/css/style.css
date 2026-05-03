@@ -1,0 +1,57 @@
+body {
+    background: linear-gradient(150deg, #f5f9ff 0%, #e8efff 55%, #ffffff 100%);
+    color: #212529;
+}
+
+.navbar {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.card {
+    border: none;
+    border-radius: 1rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.08);
+}
+
+.card-title {
+    font-weight: 700;
+}
+
+.btn-primary {
+    background-color: #2563eb;
+    border-color: #2563eb;
+}
+
+.btn-primary:hover {
+    background-color: #1d4ed8;
+    border-color: #1d4ed8;
+}
+
+.table {
+    background: #ffffff;
+}
+
+.table thead {
+    background: #eef4ff;
+}
+
+.form-control,
+.form-select {
+    border-radius: .75rem;
+}
+
+.alert {
+    border-radius: .75rem;
+}
+
+footer {
+    margin-top: 2rem;
+    padding: 1rem 0;
+    text-align: center;
+    color: #6c757d;
+}
